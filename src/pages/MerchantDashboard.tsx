@@ -6,6 +6,8 @@ import { MerchantSidebar } from "@/components/merchant/MerchantSidebar";
 import { MerchantStatsCards } from "@/components/merchant/MerchantStatsCards";
 import { LiveOrders } from "@/components/merchant/LiveOrders";
 import { MenuManagement } from "@/components/merchant/MenuManagement";
+import PDVSystem from "./PDVSystem";
+import PDVHistory from "./PDVHistory";
 import { Menu, X, Bell } from "lucide-react";
 
 const MerchantDashboard = () => {
@@ -18,6 +20,10 @@ const MerchantDashboard = () => {
         return <LiveOrders />;
       case "menu":
         return <MenuManagement />;
+      case "pdv-create":
+        return <PDVSystem />;
+      case "pdv-history":
+        return <PDVHistory />;
       default:
         return (
           <>

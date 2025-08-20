@@ -12,6 +12,12 @@ interface MerchantSidebarProps {
 export const MerchantSidebar = ({ isOpen, onClose, activeTab, onTabChange }: MerchantSidebarProps) => {
   const menuItems = [
     { id: "dashboard", icon: LayoutDashboard, label: "Painel", active: activeTab === "dashboard" },
+    { id: "pdv", icon: Utensils, label: "PDV", hasSubmenu: true, 
+      submenu: [
+        { id: "pdv-create", label: "Criar Ordem" },
+        { id: "pdv-history", label: "Histórico de Ordem" }
+      ]
+    },
     { id: "config", icon: Settings, label: "Configuração do site", hasSubmenu: true },
     { id: "merchant", icon: Building, label: "Comerciante", hasSubmenu: true },
     { id: "filtering", icon: Settings, label: "Filiação", hasSubmenu: true },
