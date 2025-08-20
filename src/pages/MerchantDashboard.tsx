@@ -8,6 +8,10 @@ import { LiveOrders } from "@/components/merchant/LiveOrders";
 import { MenuManagement } from "@/components/merchant/MenuManagement";
 import PDVSystem from "./PDVSystem";
 import PDVHistory from "./PDVHistory";
+import SiteConfig from "./SiteConfig";
+import PaymentGateway from "./PaymentGateway";
+import EarningsPage from "./EarningsPage";
+import TableReservation from "./TableReservation";
 import { Menu, X, Bell } from "lucide-react";
 
 const MerchantDashboard = () => {
@@ -24,6 +28,14 @@ const MerchantDashboard = () => {
         return <PDVSystem />;
       case "pdv-history":
         return <PDVHistory />;
+      case "config":
+        return <SiteConfig />;
+      case "gateway":
+        return <PaymentGateway />;
+      case "earnings":
+        return <EarningsPage />;
+      case "reservation":
+        return <TableReservation />;
       default:
         return (
           <>
