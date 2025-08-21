@@ -6,24 +6,26 @@ import { X, LayoutDashboard, Store, Settings, CreditCard, BarChart3, Users, Mess
 interface AdminSidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  activeTab?: string;
+  onTabChange?: (tab: string) => void;
 }
 
-export const AdminSidebar = ({ isOpen, onClose }: AdminSidebarProps) => {
+export const AdminSidebar = ({ isOpen, onClose, activeTab = "dashboard", onTabChange }: AdminSidebarProps) => {
   const menuItems = [
-    { icon: LayoutDashboard, label: "Painel", active: true },
-    { icon: Store, label: "Comerciante", hasSubmenu: true },
-    { icon: FileText, label: "Filiação", hasSubmenu: true },
-    { icon: ShoppingBag, label: "Pedidos", hasSubmenu: true },
-    { icon: CreditCard, label: "Gateway de pagamento", hasSubmenu: true },
-    { icon: Wallet, label: "Conta", hasSubmenu: true },
-    { icon: BarChart3, label: "Ganhos", hasSubmenu: true },
-    { icon: Package, label: "Table reservation", hasSubmenu: true },
-    { icon: Receipt, label: "Invoice", hasSubmenu: true },
-    { icon: FileText, label: "Saques", hasSubmenu: true },
-    { icon: Settings, label: "Atributos", hasSubmenu: true },
-    { icon: Bell, label: "Promoção", hasSubmenu: true },
-    { icon: MessageSquare, label: "Notificações", hasSubmenu: true },
-    { icon: BarChart3, label: "Marketing", hasSubmenu: true },
+    { id: "dashboard", icon: LayoutDashboard, label: "Painel", active: activeTab === "dashboard" },
+    { id: "merchant", icon: Store, label: "Comerciante", hasSubmenu: true },
+    { id: "affiliation", icon: FileText, label: "Filiação", hasSubmenu: true },
+    { id: "orders", icon: ShoppingBag, label: "Pedidos", hasSubmenu: true },
+    { id: "gateway", icon: CreditCard, label: "Gateway de pagamento", hasSubmenu: true },
+    { id: "account", icon: Wallet, label: "Conta", hasSubmenu: true },
+    { id: "earnings", icon: BarChart3, label: "Ganhos", hasSubmenu: true },
+    { id: "reservations", icon: Package, label: "Table reservation", hasSubmenu: true },
+    { id: "invoice", icon: Receipt, label: "Invoice", hasSubmenu: true },
+    { id: "withdrawals", icon: FileText, label: "Saques", hasSubmenu: true },
+    { id: "attributes", icon: Settings, label: "Atributos", hasSubmenu: true },
+    { id: "promotion", icon: Bell, label: "Promoção", hasSubmenu: true },
+    { id: "notifications", icon: MessageSquare, label: "Notificações", hasSubmenu: true },
+    { id: "marketing", icon: BarChart3, label: "Marketing", hasSubmenu: true },
     { icon: Users, label: "Compradores", hasSubmenu: true },
     { icon: Globe, label: "Aplicativo de terceiros", hasSubmenu: true },
     { icon: MessageSquare, label: "SMS", hasSubmenu: true },
@@ -88,9 +90,10 @@ export const AdminSidebar = ({ isOpen, onClose }: AdminSidebarProps) => {
             <div className="space-y-1 px-2">
               {menuItems.map((item, index) => (
                 <Button
-                  key={index}
+                  key={item.id || index}
                   variant={item.active ? "secondary" : "ghost"}
                   className="w-full justify-start gap-3 h-9"
+                  onClick={() => onTabChange?.(item.id || "dashboard")}
                 >
                   <item.icon className="h-4 w-4" />
                   <span className="text-sm">{item.label}</span>

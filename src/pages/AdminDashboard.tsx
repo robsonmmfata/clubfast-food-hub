@@ -7,10 +7,75 @@ import { StatsCards } from "@/components/admin/StatsCards";
 import { SalesChart } from "@/components/admin/SalesChart";
 import { RecentOrders } from "@/components/admin/RecentOrders";
 import { TopClients } from "@/components/admin/TopClients";
+import MerchantManagement from "@/pages/admin/MerchantManagement";
+import OrderManagement from "@/pages/admin/OrderManagement";
+import PaymentGatewayAdmin from "@/pages/admin/PaymentGatewayAdmin";
+import WithdrawalManagement from "@/pages/admin/WithdrawalManagement";
+import MarketingAdmin from "@/pages/admin/MarketingAdmin";
 import { Menu, X } from "lucide-react";
 
 const AdminDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("dashboard");
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "merchant":
+        return <MerchantManagement />;
+      case "orders":
+        return <OrderManagement />;
+      case "gateway":
+        return <PaymentGatewayAdmin />;
+      case "withdrawals":
+        return <WithdrawalManagement />;
+      case "marketing":
+        return <MarketingAdmin />;
+      default:
+        return (
+          <>
+            <StatsCards />
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="lg:col-span-2">
+                <SalesChart />
+              </div>
+              <div>
+                <TopClients />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <RecentOrders />
+              <Card>
+                <CardHeader>
+                  <CardTitle>Últimos Restaurantes</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {[
+                      { name: "McDonald's", status: "Ativo", commission: "5%" },
+                      { name: "Jollibee", status: "Ativo", commission: "4.5%" },
+                      { name: "Panda Express", status: "Pendente", commission: "5%" },
+                      { name: "Subway", status: "Ativo", commission: "4%" },
+                    ].map((restaurant, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 border border-border rounded-lg">
+                        <div>
+                          <p className="font-medium">{restaurant.name}</p>
+                          <p className="text-sm text-muted-foreground">Comissão: {restaurant.commission}</p>
+                        </div>
+                        <Badge variant={restaurant.status === "Ativo" ? "default" : "secondary"}>
+                          {restaurant.status}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </>
+        );
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -20,7 +85,12 @@ const AdminDashboard = () => {
       )}
 
       {/* Sidebar */}
-      <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <AdminSidebar 
+        isOpen={sidebarOpen} 
+        onClose={() => setSidebarOpen(false)}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+      />
 
       {/* Main content */}
       <div className="lg:ml-64">
@@ -49,45 +119,7 @@ const AdminDashboard = () => {
 
         {/* Dashboard content */}
         <main className="p-6 space-y-6">
-          <StatsCards />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2">
-              <SalesChart />
-            </div>
-            <div>
-              <TopClients />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <RecentOrders />
-            <Card>
-              <CardHeader>
-                <CardTitle>Últimos Restaurantes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {[
-                    { name: "McDonald's", status: "Ativo", commission: "5%" },
-                    { name: "Jollibee", status: "Ativo", commission: "4.5%" },
-                    { name: "Panda Express", status: "Pendente", commission: "5%" },
-                    { name: "Subway", status: "Ativo", commission: "4%" },
-                  ].map((restaurant, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 border border-border rounded-lg">
-                      <div>
-                        <p className="font-medium">{restaurant.name}</p>
-                        <p className="text-sm text-muted-foreground">Comissão: {restaurant.commission}</p>
-                      </div>
-                      <Badge variant={restaurant.status === "Ativo" ? "default" : "secondary"}>
-                        {restaurant.status}
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          {renderContent()}
         </main>
       </div>
     </div>

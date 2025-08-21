@@ -6,6 +6,9 @@ import { MerchantSidebar } from "@/components/merchant/MerchantSidebar";
 import { MerchantStatsCards } from "@/components/merchant/MerchantStatsCards";
 import { LiveOrders } from "@/components/merchant/LiveOrders";
 import { MenuManagement } from "@/components/merchant/MenuManagement";
+import MenuManagementFull from "@/pages/merchant/MenuManagementFull";
+import InventoryManagement from "@/pages/merchant/InventoryManagement";
+import KitchenSystem from "@/pages/merchant/KitchenSystem";
 import PDVSystem from "./PDVSystem";
 import PDVHistory from "./PDVHistory";
 import SiteConfig from "./SiteConfig";
@@ -24,6 +27,12 @@ const MerchantDashboard = () => {
         return <LiveOrders />;
       case "menu":
         return <MenuManagement />;
+      case "food":
+        return <MenuManagementFull />;
+      case "inventory":
+        return <InventoryManagement />;
+      case "kitchen":
+        return <KitchenSystem />;
       case "pdv-create":
         return <PDVSystem />;
       case "pdv-history":
