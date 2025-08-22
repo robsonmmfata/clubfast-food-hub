@@ -15,6 +15,16 @@ import SiteConfig from "./SiteConfig";
 import PaymentGateway from "./PaymentGateway";
 import EarningsPage from "./EarningsPage";
 import TableReservation from "./TableReservation";
+import Affiliation from "./merchant/Affiliation";
+import AccountManagement from "./merchant/AccountManagement";
+import InvoiceManagement from "./merchant/InvoiceManagement";
+import WithdrawalsMerchant from "./merchant/WithdrawalsMerchant";
+import AttributesManagement from "./merchant/AttributesManagement";
+import OrderTypes from "./merchant/OrderTypes";
+import ImageManagement from "./merchant/ImageManagement";
+import PromotionsManagement from "./merchant/PromotionsManagement";
+import NotificationsManagement from "./merchant/NotificationsManagement";
+import MarketingMerchant from "./merchant/MarketingMerchant";
 import { Menu, X, Bell } from "lucide-react";
 
 const MerchantDashboard = () => {
@@ -45,6 +55,26 @@ const MerchantDashboard = () => {
         return <EarningsPage />;
       case "reservation":
         return <TableReservation />;
+      case "affiliation":
+        return <Affiliation />;
+      case "account":
+        return <AccountManagement />;
+      case "invoice":
+        return <InvoiceManagement />;
+      case "withdrawals":
+        return <WithdrawalsMerchant />;
+      case "attributes":
+        return <AttributesManagement />;
+      case "order-types":
+        return <OrderTypes />;
+      case "images":
+        return <ImageManagement />;
+      case "promotions":
+        return <PromotionsManagement />;
+      case "notifications":
+        return <NotificationsManagement />;
+      case "marketing":
+        return <MarketingMerchant />;
       default:
         return (
           <>

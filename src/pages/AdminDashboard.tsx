@@ -12,6 +12,9 @@ import OrderManagement from "@/pages/admin/OrderManagement";
 import PaymentGatewayAdmin from "@/pages/admin/PaymentGatewayAdmin";
 import WithdrawalManagement from "@/pages/admin/WithdrawalManagement";
 import MarketingAdmin from "@/pages/admin/MarketingAdmin";
+import EarningsAdmin from "@/pages/admin/EarningsAdmin";
+import TableReservationAdmin from "@/pages/admin/TableReservationAdmin";
+import InvoiceAdmin from "@/pages/admin/InvoiceAdmin";
 import { Menu, X } from "lucide-react";
 
 const AdminDashboard = () => {
@@ -30,6 +33,12 @@ const AdminDashboard = () => {
         return <WithdrawalManagement />;
       case "marketing":
         return <MarketingAdmin />;
+      case "earnings":
+        return <EarningsAdmin />;
+      case "reservations":
+        return <TableReservationAdmin />;
+      case "invoice":
+        return <InvoiceAdmin />;
       default:
         return (
           <>
