@@ -15,6 +15,13 @@ import MarketingAdmin from "@/pages/admin/MarketingAdmin";
 import EarningsAdmin from "@/pages/admin/EarningsAdmin";
 import TableReservationAdmin from "@/pages/admin/TableReservationAdmin";
 import InvoiceAdmin from "@/pages/admin/InvoiceAdmin";
+import AttributesAdmin from "@/pages/admin/AttributesAdmin";
+import PromotionsAdmin from "@/pages/admin/PromotionsAdmin";
+import NotificationsAdmin from "@/pages/admin/NotificationsAdmin";
+import BuyersAdmin from "@/pages/admin/BuyersAdmin";
+import ThirdPartyAppsAdmin from "@/pages/admin/ThirdPartyAppsAdmin";
+import SMSAdmin from "@/pages/admin/SMSAdmin";
+import ReportsAdmin from "@/pages/admin/ReportsAdmin";
 import { Menu, X } from "lucide-react";
 
 const AdminDashboard = () => {
@@ -39,6 +46,20 @@ const AdminDashboard = () => {
         return <TableReservationAdmin />;
       case "invoice":
         return <InvoiceAdmin />;
+      case "attributes":
+        return <AttributesAdmin />;
+      case "promotion":
+        return <PromotionsAdmin />;
+      case "notifications":
+        return <NotificationsAdmin />;
+      case "buyers":
+        return <BuyersAdmin />;
+      case "third-party":
+        return <ThirdPartyAppsAdmin />;
+      case "sms":
+        return <SMSAdmin />;
+      case "reports":
+        return <ReportsAdmin />;
       default:
         return (
           <>

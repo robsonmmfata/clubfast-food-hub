@@ -25,6 +25,10 @@ import ImageManagement from "./merchant/ImageManagement";
 import PromotionsManagement from "./merchant/PromotionsManagement";
 import NotificationsManagement from "./merchant/NotificationsManagement";
 import MarketingMerchant from "./merchant/MarketingMerchant";
+import BuyersMerchant from "./merchant/BuyersMerchant";
+import ThirdPartyAppsMerchant from "./merchant/ThirdPartyAppsMerchant";
+import SMSMerchant from "./merchant/SMSMerchant";
+import ReportsMerchant from "./merchant/ReportsMerchant";
 import { Menu, X, Bell } from "lucide-react";
 
 const MerchantDashboard = () => {
@@ -75,6 +79,14 @@ const MerchantDashboard = () => {
         return <NotificationsManagement />;
       case "marketing":
         return <MarketingMerchant />;
+      case "buyers":
+        return <BuyersMerchant />;
+      case "third-party":
+        return <ThirdPartyAppsMerchant />;
+      case "sms":
+        return <SMSMerchant />;
+      case "reports":
+        return <ReportsMerchant />;
       default:
         return (
           <>
