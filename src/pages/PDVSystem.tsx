@@ -25,45 +25,115 @@ const PDVSystem = () => {
   const [orderType, setOrderType] = useState("delivery");
 
   const categories = [
-    "all", "Desserts & Drinks", "Group Meals", "Rice Bowls", "BEER", 
-    "Breakfast", "Featured", "pizza", "Pizza Italian", "Traditional"
+    "all", "Sobremesas & Bebidas", "Refeições em Grupo", "Tigelas de Arroz", "CERVEJA", 
+    "Café da Manhã", "Destaques", "Pizza", "Pizza Italiana", "Tradicional"
   ];
 
   const products: Product[] = [
     {
       id: "1",
-      name: "McFlurry w/ Oreo",
+      name: "McFlurry c/ Oreo",
       price: 53.00,
       image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
-      category: "Desserts & Drinks"
+      category: "Sobremesas & Bebidas"
     },
     {
       id: "2", 
-      name: "Hot Caramel Sundae",
+      name: "Sundae de Caramelo Quente",
       price: 32.00,
       image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
-      category: "Desserts & Drinks"
+      category: "Sobremesas & Bebidas"
     },
     {
       id: "3",
-      name: "Hot Fudge Sundae", 
+      name: "Sundae de Chocolate Quente", 
       price: 40.00,
       image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
-      category: "Desserts & Drinks"
+      category: "Sobremesas & Bebidas"
     },
     {
       id: "4",
-      name: "ItemBurger",
+      name: "Hambúrguer",
       price: 19.00,
       image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png", 
-      category: "Featured"
+      category: "Destaques"
     },
     {
       id: "5",
       name: "Baklava",
       price: 7000.00,
       image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
-      category: "Traditional"
+      category: "Tradicional"
+    },
+    {
+      id: "6",
+      name: "Big Mac",
+      price: 24.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Destaques"
+    },
+    {
+      id: "7",
+      name: "Quarteirão c/ Queijo",
+      price: 22.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Destaques"
+    },
+    {
+      id: "8",
+      name: "McNuggets 10 Peças",
+      price: 18.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Destaques"
+    },
+    {
+      id: "9",
+      name: "Batata Frita Grande",
+      price: 8.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Destaques"
+    },
+    {
+      id: "10",
+      name: "Coca-Cola 500ml",
+      price: 5.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Sobremesas & Bebidas"
+    },
+    {
+      id: "11",
+      name: "Café Expresso",
+      price: 3.50,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Café da Manhã"
+    },
+    {
+      id: "12",
+      name: "McMuffin Ovo e Queijo",
+      price: 12.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Café da Manhã"
+    },
+    {
+      id: "13",
+      name: "Pizza Margherita",
+      price: 35.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Pizza"
+    },
+    {
+      id: "14",
+      name: "Pizza Pepperoni",
+      price: 42.90,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "Pizza"
+    },
+    {
+      id: "15",
+      name: "Cerveja Brahma 600ml",
+      price: 8.50,
+      image: "/lovable-uploads/b7ab84d3-1985-44b1-afe2-9b91f47a4c20.png",
+      category: "CERVEJA"
     }
   ];
 
@@ -109,11 +179,11 @@ const PDVSystem = () => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <ShoppingCart className="h-6 w-6 text-primary" />
-              <span className="text-sm text-muted-foreground">Club Fast - PDV</span>
+              <span className="text-sm text-muted-foreground">Club Fast - Sistema PDV</span>
             </div>
             <div className="flex items-center gap-2">
               <User className="h-4 w-4" />
-              <span className="text-sm">Walk-in Customer</span>
+              <span className="text-sm">Cliente Balcão</span>
             </div>
           </div>
           
@@ -121,21 +191,23 @@ const PDVSystem = () => {
             <Button 
               variant={orderType === "delivery" ? "default" : "outline"}
               onClick={() => setOrderType("delivery")}
-              className="bg-dashboard-green text-white"
+              className={orderType === "delivery" ? "bg-green-600 hover:bg-green-700" : ""}
             >
-              Delivery
+              Entrega
             </Button>
             <Button 
               variant={orderType === "dinein" ? "default" : "outline"}
               onClick={() => setOrderType("dinein")}
+              className={orderType === "dinein" ? "bg-primary" : ""}
             >
-              Dine In
+              Balcão
             </Button>
             <Button 
               variant={orderType === "pickup" ? "default" : "outline"}
               onClick={() => setOrderType("pickup")}
+              className={orderType === "pickup" ? "bg-primary" : ""}
             >
-              Pickup
+              Retirada
             </Button>
           </div>
         </div>
@@ -254,11 +326,11 @@ const PDVSystem = () => {
                       <div className="grid grid-cols-1 gap-2">
                         <Button variant="outline" className="bg-yellow-500 hover:bg-yellow-600 text-white">
                           <Clock className="h-4 w-4 mr-2" />
-                          Kitchen
+                          Cozinha
                         </Button>
-                        <Button className="bg-dashboard-green hover:bg-dashboard-green/80 text-white">
+                        <Button className="bg-green-600 hover:bg-green-700 text-white">
                           <CreditCard className="h-4 w-4 mr-2" />
-                          Continuar a pagar
+                          Proceder ao pagamento
                         </Button>
                       </div>
 

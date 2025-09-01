@@ -75,6 +75,40 @@ const MerchantDashboard = () => {
         return <NotificationsManagement />;
       case "marketing":
         return <MarketingMerchant />;
+      case "buyers":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Compradores</h1><p>Sistema de gerenciamento de compradores em desenvolvimento...</p></div>;
+      case "third-party":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Aplicativos de Terceiros</h1><p>Sistema de integração com aplicativos de terceiros em desenvolvimento...</p></div>;
+      case "sms":
+        return <div className="p-6"><h1 className="text-2xl font-bold">SMS</h1><p>Sistema de SMS em desenvolvimento...</p></div>;
+      case "reports":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Relatórios</h1><p>Sistema de relatórios em desenvolvimento...</p></div>;
+      case "mobile":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Mobile Merchant</h1><p>Sistema mobile em desenvolvimento...</p></div>;
+      case "delivery":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Delivery Management</h1><p>Sistema de gerenciamento de delivery em desenvolvimento...</p></div>;
+      case "loyalty":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Loyalty Points</h1><p>Sistema de pontos de fidelidade em desenvolvimento...</p></div>;
+      case "tableside":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Tableside Ordering</h1><p>Sistema de pedidos na mesa em desenvolvimento...</p></div>;
+      case "currency":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Multi Currency</h1><p>Sistema multi-moeda em desenvolvimento...</p></div>;
+      case "wallet":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Digital Wallet</h1><p>Carteira digital em desenvolvimento...</p></div>;
+      case "communication":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Communication</h1><p>Sistema de comunicação em desenvolvimento...</p></div>;
+      case "internet":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Local na Rede Internet</h1><p>Configurações de rede em desenvolvimento...</p></div>;
+      case "commercial":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Comercial</h1><p>Sistema comercial em desenvolvimento...</p></div>;
+      case "media":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Biblioteca de Mídia</h1><p>Gerenciamento de mídia em desenvolvimento...</p></div>;
+      case "printers":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Printers</h1><p>Configuração de impressoras em desenvolvimento...</p></div>;
+      case "addon":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Addon Manager</h1><p>Gerenciador de addons em desenvolvimento...</p></div>;
+      case "utilities":
+        return <div className="p-6"><h1 className="text-2xl font-bold">Utilities</h1><p>Utilitários do sistema em desenvolvimento...</p></div>;
       default:
         return (
           <>

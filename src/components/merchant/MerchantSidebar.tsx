@@ -20,7 +20,7 @@ export const MerchantSidebar = ({ isOpen, onClose, activeTab, onTabChange }: Mer
     },
     { id: "config", icon: Settings, label: "Configuração do site", hasSubmenu: true },
     { id: "merchant", icon: Building, label: "Comerciante", hasSubmenu: true },
-    { id: "filtering", icon: Settings, label: "Filiação", hasSubmenu: true },
+    { id: "affiliation", icon: Settings, label: "Filiação", hasSubmenu: true },
     { id: "orders", icon: ShoppingBag, label: "Pedidos", hasSubmenu: true, active: activeTab === "orders" },
     { id: "gateway", icon: Wallet, label: "Gateway de pagamento", hasSubmenu: true },
     { id: "account", icon: Users, label: "Conta", hasSubmenu: true },
@@ -32,7 +32,7 @@ export const MerchantSidebar = ({ isOpen, onClose, activeTab, onTabChange }: Mer
     { id: "food", icon: Utensils, label: "Comida", hasSubmenu: true },
     { id: "order-types", icon: ShoppingBag, label: "Tipo de pedido", hasSubmenu: true },
     { id: "images", icon: Package, label: "Imagens", hasSubmenu: true },
-    { id: "promotion", icon: Star, label: "Promoção", hasSubmenu: true },
+    { id: "promotions", icon: Star, label: "Promoção", hasSubmenu: true },
     { id: "notifications", icon: Bell, label: "Notificações", hasSubmenu: true },
     { id: "marketing", icon: MessageSquare, label: "Marketing", hasSubmenu: true },
     { id: "buyers", icon: Users, label: "Compradores", hasSubmenu: true },
@@ -103,7 +103,13 @@ export const MerchantSidebar = ({ isOpen, onClose, activeTab, onTabChange }: Mer
                   key={item.id}
                   variant={item.active ? "secondary" : "ghost"}
                   className="w-full justify-start gap-3 h-9"
-                  onClick={() => onTabChange(item.id)}
+                  onClick={() => {
+                    if (item.id === "pdv") {
+                      onTabChange("pdv-create");
+                    } else {
+                      onTabChange(item.id);
+                    }
+                  }}
                 >
                   <item.icon className="h-4 w-4" />
                   <span className="text-sm">{item.label}</span>
