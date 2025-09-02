@@ -25,6 +25,23 @@ import ImageManagement from "./merchant/ImageManagement";
 import PromotionsManagement from "./merchant/PromotionsManagement";
 import NotificationsManagement from "./merchant/NotificationsManagement";
 import MarketingMerchant from "./merchant/MarketingMerchant";
+import BuyersMerchant from "./merchant/BuyersMerchant";
+import ThirdPartyAppsMerchant from "./merchant/ThirdPartyAppsMerchant";
+import SMSMerchant from "./merchant/SMSMerchant";
+import ReportsMerchant from "./merchant/ReportsMerchant";
+import MobileMerchant from "./merchant/MobileMerchant";
+import DeliveryManagement from "./merchant/DeliveryManagement";
+import LoyaltyPoints from "./merchant/LoyaltyPoints";
+import TablesideOrdering from "./merchant/TablesideOrdering";
+import MultiCurrency from "./merchant/MultiCurrency";
+import DigitalWallet from "./merchant/DigitalWallet";
+import Communication from "./merchant/Communication";
+import InternetSettings from "./merchant/InternetSettings";
+import Commercial from "./merchant/Commercial";
+import MediaLibrary from "./merchant/MediaLibrary";
+import PrintersManagement from "./merchant/PrintersManagement";
+import AddonManager from "./merchant/AddonManager";
+import Utilities from "./merchant/Utilities";
 import { Menu, X, Bell } from "lucide-react";
 
 const MerchantDashboard = () => {
@@ -76,39 +93,39 @@ const MerchantDashboard = () => {
       case "marketing":
         return <MarketingMerchant />;
       case "buyers":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Compradores</h1><p>Sistema de gerenciamento de compradores em desenvolvimento...</p></div>;
+        return <BuyersMerchant />;
       case "third-party":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Aplicativos de Terceiros</h1><p>Sistema de integração com aplicativos de terceiros em desenvolvimento...</p></div>;
+        return <ThirdPartyAppsMerchant />;
       case "sms":
-        return <div className="p-6"><h1 className="text-2xl font-bold">SMS</h1><p>Sistema de SMS em desenvolvimento...</p></div>;
+        return <SMSMerchant />;
       case "reports":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Relatórios</h1><p>Sistema de relatórios em desenvolvimento...</p></div>;
+        return <ReportsMerchant />;
       case "mobile":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Mobile Merchant</h1><p>Sistema mobile em desenvolvimento...</p></div>;
+        return <MobileMerchant />;
       case "delivery":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Delivery Management</h1><p>Sistema de gerenciamento de delivery em desenvolvimento...</p></div>;
+        return <DeliveryManagement />;
       case "loyalty":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Loyalty Points</h1><p>Sistema de pontos de fidelidade em desenvolvimento...</p></div>;
+        return <LoyaltyPoints />;
       case "tableside":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Tableside Ordering</h1><p>Sistema de pedidos na mesa em desenvolvimento...</p></div>;
+        return <TablesideOrdering />;
       case "currency":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Multi Currency</h1><p>Sistema multi-moeda em desenvolvimento...</p></div>;
+        return <MultiCurrency />;
       case "wallet":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Digital Wallet</h1><p>Carteira digital em desenvolvimento...</p></div>;
+        return <DigitalWallet />;
       case "communication":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Communication</h1><p>Sistema de comunicação em desenvolvimento...</p></div>;
+        return <Communication />;
       case "internet":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Local na Rede Internet</h1><p>Configurações de rede em desenvolvimento...</p></div>;
+        return <InternetSettings />;
       case "commercial":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Comercial</h1><p>Sistema comercial em desenvolvimento...</p></div>;
+        return <Commercial />;
       case "media":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Biblioteca de Mídia</h1><p>Gerenciamento de mídia em desenvolvimento...</p></div>;
+        return <MediaLibrary />;
       case "printers":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Printers</h1><p>Configuração de impressoras em desenvolvimento...</p></div>;
+        return <PrintersManagement />;
       case "addon":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Addon Manager</h1><p>Gerenciador de addons em desenvolvimento...</p></div>;
+        return <AddonManager />;
       case "utilities":
-        return <div className="p-6"><h1 className="text-2xl font-bold">Utilities</h1><p>Utilitários do sistema em desenvolvimento...</p></div>;
+        return <Utilities />;
       default:
         return (
           <>
