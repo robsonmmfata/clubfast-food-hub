@@ -15,6 +15,13 @@ import MarketingAdmin from "@/pages/admin/MarketingAdmin";
 import EarningsAdmin from "@/pages/admin/EarningsAdmin";
 import TableReservationAdmin from "@/pages/admin/TableReservationAdmin";
 import InvoiceAdmin from "@/pages/admin/InvoiceAdmin";
+import AffiliationAdmin from "@/pages/admin/AffiliationAdmin";
+import AccountAdmin from "@/pages/admin/AccountAdmin";
+import AttributesAdmin from "@/pages/admin/AttributesAdmin";
+import PromotionAdmin from "@/pages/admin/PromotionAdmin";
+import NotificationsAdmin from "@/pages/admin/NotificationsAdmin";
+import BuyersAdmin from "@/pages/admin/BuyersAdmin";
+import ThirdPartyAppsAdmin from "@/pages/admin/ThirdPartyAppsAdmin";
 import { Menu, X } from "lucide-react";
 
 const AdminDashboard = () => {
@@ -25,20 +32,34 @@ const AdminDashboard = () => {
     switch (activeTab) {
       case "merchant":
         return <MerchantManagement />;
+      case "affiliation":
+        return <AffiliationAdmin />;
       case "orders":
         return <OrderManagement />;
       case "gateway":
         return <PaymentGatewayAdmin />;
-      case "withdrawals":
-        return <WithdrawalManagement />;
-      case "marketing":
-        return <MarketingAdmin />;
+      case "account":
+        return <AccountAdmin />;
       case "earnings":
         return <EarningsAdmin />;
       case "reservations":
         return <TableReservationAdmin />;
       case "invoice":
         return <InvoiceAdmin />;
+      case "withdrawals":
+        return <WithdrawalManagement />;
+      case "attributes":
+        return <AttributesAdmin />;
+      case "promotion":
+        return <PromotionAdmin />;
+      case "notifications":
+        return <NotificationsAdmin />;
+      case "marketing":
+        return <MarketingAdmin />;
+      case "buyers":
+        return <BuyersAdmin />;
+      case "thirdparty":
+        return <ThirdPartyAppsAdmin />;
       default:
         return (
           <>
