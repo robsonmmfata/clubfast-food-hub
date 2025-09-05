@@ -28,6 +28,12 @@ import MobileMerchantAdmin from "@/pages/admin/MobileMerchantAdmin";
 import KitchenAppAdmin from "@/pages/admin/KitchenAppAdmin";
 import DeliveryManagementAdmin from "@/pages/admin/DeliveryManagementAdmin";
 import LoyaltyPointsAdmin from "@/pages/admin/LoyaltyPointsAdmin";
+import TablesideOrderingAdmin from "@/pages/admin/TablesideOrderingAdmin";
+import MultiCurrencyAdmin from "@/pages/admin/MultiCurrencyAdmin";
+import DigitalWalletAdmin from "@/pages/admin/DigitalWalletAdmin";
+import CommunicationAdmin from "@/pages/admin/CommunicationAdmin";
+import InternetAdmin from "@/pages/admin/InternetAdmin";
+import CommercialAdmin from "@/pages/admin/CommercialAdmin";
 import { Menu, X } from "lucide-react";
 
 const AdminDashboard = () => {
@@ -78,6 +84,18 @@ const AdminDashboard = () => {
         return <DeliveryManagementAdmin />;
       case "loyalty":
         return <LoyaltyPointsAdmin />;
+      case "tableside":
+        return <TablesideOrderingAdmin />;
+      case "multicurrency":
+        return <MultiCurrencyAdmin />;
+      case "digitalwallet":
+        return <DigitalWalletAdmin />;
+      case "communication":
+        return <CommunicationAdmin />;
+      case "internet":
+        return <InternetAdmin />;
+      case "commercial":
+        return <CommercialAdmin />;
       default:
         return (
           <>
