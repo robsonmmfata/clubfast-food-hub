@@ -34,6 +34,10 @@ import DigitalWalletAdmin from "@/pages/admin/DigitalWalletAdmin";
 import CommunicationAdmin from "@/pages/admin/CommunicationAdmin";
 import InternetAdmin from "@/pages/admin/InternetAdmin";
 import CommercialAdmin from "@/pages/admin/CommercialAdmin";
+import MediaLibraryAdmin from "@/pages/admin/MediaLibraryAdmin";
+import PrintersAdmin from "@/pages/admin/PrintersAdmin";
+import AddonManagerAdmin from "@/pages/admin/AddonManagerAdmin";
+import UtilitiesAdmin from "@/pages/admin/UtilitiesAdmin";
 import { Menu, X } from "lucide-react";
 
 const AdminDashboard = () => {
@@ -96,6 +100,14 @@ const AdminDashboard = () => {
         return <InternetAdmin />;
       case "commercial":
         return <CommercialAdmin />;
+      case "media":
+        return <MediaLibraryAdmin />;
+      case "printers":
+        return <PrintersAdmin />;
+      case "addon":
+        return <AddonManagerAdmin />;
+      case "utilities":
+        return <UtilitiesAdmin />;
       default:
         return (
           <>
