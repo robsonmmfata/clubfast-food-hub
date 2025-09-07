@@ -5,6 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Truck, ChevronLeft, ChevronRight } from "lucide-react";
+import heroPerson1 from "@/assets/hero-person-1.jpg";
+import heroPerson2 from "@/assets/hero-person-2.jpg";
+import mcdonaldsRestaurant from "@/assets/mcdonalds-restaurant.jpg";
+import jollibeeRestaurant from "@/assets/jollibee-restaurant.jpg";
+import pandaExpressRestaurant from "@/assets/panda-express-restaurant.jpg";
+import subwayRestaurant from "@/assets/subway-restaurant.jpg";
+import cheesyEggdesalMeal from "@/assets/cheesy-eggdesal-meal.jpg";
+import breakfastRiceBowl from "@/assets/breakfast-rice-bowl.jpg";
+import breakfastSandwichDuo from "@/assets/breakfast-sandwich-duo.jpg";
+import sausageMcmuffin from "@/assets/sausage-mcmuffin.jpg";
+import chefProfessional from "@/assets/chef-professional.jpg";
+import happyCustomers from "@/assets/happy-customers.jpg";
+import deliveryPerson from "@/assets/delivery-person.jpg";
 
 const Index = () => {
   const [cartItemCount, setCartItemCount] = useState(0);
@@ -27,7 +40,7 @@ const Index = () => {
       category: "American,Barbecue,Chinese,Deli,Diner,Greek",
       rating: 4.5,
       reviews: "56+ Ratings",
-      image: "/api/placeholder/300/200",
+      image: mcdonaldsRestaurant,
       deliveryTime: "10-30 mins",
       promo: "[promo(10)] $20.00 off"
     },
@@ -37,7 +50,7 @@ const Index = () => {
       category: "Burgers,Diner",
       rating: 4.7,
       reviews: "7+ Ratings", 
-      image: "/api/placeholder/300/200",
+      image: jollibeeRestaurant,
       deliveryTime: "10-30 mins"
     },
     {
@@ -46,7 +59,7 @@ const Index = () => {
       category: "Chinese,Sandwiches",
       rating: 4.4,
       reviews: "4+ Ratings",
-      image: "/api/placeholder/300/200",
+      image: pandaExpressRestaurant,
       deliveryTime: "05-10 mins"
     },
     {
@@ -55,7 +68,7 @@ const Index = () => {
       category: "Burgers",
       rating: 4.5,
       reviews: "5+ Ratings",
-      image: "/api/placeholder/300/200",
+      image: subwayRestaurant,
       deliveryTime: "05-10 mins"
     }
   ];
@@ -66,28 +79,28 @@ const Index = () => {
       name: "Cheesy Eggdesal Meal",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mattis suscipit, diam sed consequat.",
       price: 97.00,
-      image: "/api/placeholder/250/200"
+      image: cheesyEggdesalMeal
     },
     {
       id: 2,
       name: "Breakfast Rice Bowl Duo", 
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mattis suscipit, diam sed consequat.",
       price: 20.00,
-      image: "/api/placeholder/250/200"
+      image: breakfastRiceBowl
     },
     {
       id: 3,
       name: "Breakfast Sandwich Duo",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mattis suscipit, diam sed consequat.",
       price: 249.00,
-      image: "/api/placeholder/250/200"
+      image: breakfastSandwichDuo
     },
     {
       id: 4,
       name: "Sausage McMuffin with Egg",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mattis suscipit, diam sed consequat.",
       price: 145.00,
-      image: "/api/placeholder/250/200"
+      image: sausageMcmuffin
     }
   ];
 
@@ -123,12 +136,12 @@ const Index = () => {
             </div>
             <div className="hidden lg:flex gap-8">
               <img 
-                src="/api/placeholder/300/400" 
+                src={heroPerson1} 
                 alt="Person with food"
                 className="w-80 h-96 object-cover rounded-lg"
               />
               <img 
-                src="/api/placeholder/300/400" 
+                src={heroPerson2} 
                 alt="Person eating"
                 className="w-80 h-96 object-cover rounded-lg"
               />
@@ -304,7 +317,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div className="text-center">
               <img 
-                src="/api/placeholder/300/200" 
+                src={chefProfessional} 
                 alt="Chef"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -313,7 +326,7 @@ const Index = () => {
             </div>
             <div className="text-center">
               <img 
-                src="/api/placeholder/300/200" 
+                src={happyCustomers} 
                 alt="Customers"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -322,7 +335,7 @@ const Index = () => {
             </div>
             <div className="text-center">
               <img 
-                src="/api/placeholder/300/200" 
+                src={deliveryPerson} 
                 alt="Delivery"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
